@@ -95,12 +95,13 @@ trainer = torch.optim.SGD(model.parameters(), lr=0.001)
 
 # %% train model
 batch_size = 32
-# Инициализуем переменные для
+# Инициализуем переменные для рисования графиков
 history = np.array([])
 accuracy = np.array([])
 history = np.append(history, loss(model(X_train), Y_train).detach().numpy())        
 accuracy = np.append(accuracy, loss(model(X_test), Y_test).detach().numpy())
 
+# Обучение нейросети
 num_epochs = 200
 for epoch in range(1, num_epochs + 1):
     for X_batch, Y_batch in data_iter(batch_size, X_train, Y_train):
