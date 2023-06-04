@@ -89,7 +89,7 @@ def data_iter(batch_size, features, labels):
 
 
 model = torch.nn.Sequential(torch.nn.Linear(X_train.shape[1], Y_train.shape[1]))
-loss = torch.nn.MSELoss(reduction='mean')
+loss = torch.nn.MSELoss()
 trainer = torch.optim.SGD(model.parameters(), lr=0.001)
 
 
